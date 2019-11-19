@@ -2,13 +2,13 @@ var FtpDeploy = require("ftp-deploy");
 var ftpDeploy = new FtpDeploy();
  
 var config = {
-    user: "user",
+    user: "deployer@lombokfoss.hack.id",
     // Password optional, prompted if none given
-    password: "password",
-    host: "ftp.someserver.com",
+    password: process.env.FTP_PASS,
+    host: "lombokfoss.hack.id",
     port: 21,
-    localRoot: __dirname + "/local-folder",
-    remoteRoot: "/public_html/remote-folder/",
+    localRoot: __dirname + "/public",
+    remoteRoot: "/public_html/",
     // include: ["*", "**/*"],      // this would upload everything except dot files
     include: ["*.php", "dist/*", ".*"],
     // e.g. exclude sourcemaps, and ALL files in node_modules (including dot files)
